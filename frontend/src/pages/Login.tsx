@@ -1,7 +1,8 @@
 import React from "react";
-
+import styles from "../styles/login.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [name, setName] = React.useState("");
@@ -34,7 +35,7 @@ function Login() {
       });
   }
   return (
-    <div className="Login">
+    <div className={styles.Login}>
       <h1>Login</h1>
       <form onSubmit={submitHandler}>
         <br />
@@ -55,6 +56,7 @@ function Login() {
         />
         <br />
         <button type="submit">Submit</button>
+        <Link to={`/register`}>Not a user? Register</Link>
       </form>
     </div>
   );
