@@ -1,0 +1,53 @@
+.nav {
+  background-color: rgb(39, 36, 36);
+  height: 5rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  align-items: center;
+  font-family: "Circular Std Book";
+}
+* {
+  font-family: "Circular Std Book";
+}
+.nav div {
+  font-size: 1.5rem;
+  font-weight: 500;
+  display: flex;
+  width: 30vw;
+  justify-content: space-around;
+  color: white;
+}
+.nav div button {
+  font-size: 1.5rem;
+  background-color: #2364f3;
+  border: none;
+  padding: 0.3rem 2rem;
+  border-radius: 10px;
+}
+.link {
+  color: white;
+  text-decoration: none;
+}
+.body {
+  background-color: black;
+  color: white;
+  display: flex;
+  height: 90vh;
+}
+.getStarted {
+  font-size: 1.5rem;
+  background-color: #2364f3;
+  border: none;
+  padding: 0.3rem 2rem;
+  border-radius: 10px;
+  color: white;
+  width: 10vw;
+}
+.bodyText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
