@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
-
+import styles from "../styles/register.module.css";
+import { Link } from "react-router-dom";
 function Register() {
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
@@ -25,9 +26,10 @@ function Register() {
       });
   }
   return (
-    <div className="Register">
+    <div className={styles.Register}>
       <h1>Register</h1>
       <form onSubmit={submitHandler}>
+        <label>Name</label>
         <input
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -36,6 +38,7 @@ function Register() {
           placeholder="Name"
         />
         <br />
+        <label>Email</label>
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -44,6 +47,7 @@ function Register() {
           placeholder="Email"
         />
         <br />
+        <label>Password</label>
         <input
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -53,6 +57,7 @@ function Register() {
         />
         <br />
         <button type="submit">Submit</button>
+        <Link to={`/login`}>Already a user? Login</Link>
       </form>
     </div>
   );
