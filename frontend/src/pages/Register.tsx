@@ -8,9 +8,9 @@ function Register() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
 
+  let navigate = useNavigate();
   function submitHandler(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    let navigate = useNavigate();
     axios
       .post("http://localhost:5000/register", {
         name,
@@ -22,7 +22,7 @@ function Register() {
         navigate("/login");
       })
       .catch(function (error) {
-        console.log(error);
+        alert("User already exists");
       });
   }
   return (
