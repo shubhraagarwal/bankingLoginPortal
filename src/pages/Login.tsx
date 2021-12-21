@@ -3,7 +3,8 @@ import styles from "../styles/login.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
-
+import Navbar from "../components/Navbar";
+import login from "../assets/login.svg";
 function Login() {
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
@@ -35,29 +36,41 @@ function Login() {
       });
   }
   return (
-    <div className={styles.Login}>
-      <h1>Login</h1>
-      <form onSubmit={submitHandler}>
-        <br />
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-          name="email"
-          placeholder="Email"
-        />
-        <br />
-        <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          type="password"
-          name="password"
-          placeholder="Password"
-        />
-        <br />
-        <button type="submit">Submit</button>
-        <Link to={`/register`}>Not a user? Register</Link>
-      </form>
+    <div>
+      <Navbar />
+      <div className={styles.Login}>
+        <h1>Login</h1>
+        <div className={styles.container}>
+          <form onSubmit={submitHandler}>
+            <br />
+            <label className={styles.label}>Email</label>
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+            <br />
+            <label className={styles.label}>Password</label>
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              name="password"
+              required
+              placeholder="Password"
+            />
+            <br />
+            <button type="submit">Submit</button>
+            <Link className={styles.notaUser} to={`/register`}>
+              Not an existing user? <span>Register</span>
+            </Link>
+          </form>
+          <img src={login} alt="login" className={styles.img} />
+        </div>
+      </div>
     </div>
   );
 }

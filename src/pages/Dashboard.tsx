@@ -1,7 +1,8 @@
 import React, { ReactElement, useEffect, useState } from "react";
-import jwt from "jsonwebtoken";
+import styles from "../styles/dashboard.module.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Navbar from "../components/Navbar";
 interface Props {}
 
 export default function Dashboard({}: Props): ReactElement {
@@ -41,9 +42,12 @@ export default function Dashboard({}: Props): ReactElement {
   }
   return (
     <div>
-      <h1>Dashboard</h1>
-      <h2>Hi, {name}</h2>
-      <button onClick={logout}>Logout</button>
+      <Navbar />
+      <div className={styles.body}>
+        <h1>Dashboard</h1>
+        <h2>Hi, {name}</h2>
+        <button onClick={logout}>Logout</button>
+      </div>
     </div>
   );
 }
